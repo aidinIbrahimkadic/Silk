@@ -26,6 +26,7 @@ body {
 .donja-linija{
     border-bottom: solid rgba(139, 139, 139, 0.2) 1px;
 }
+/* GORNJI HEADER */
 .gornji_header{
     justify-content: space-between;
     align-items: center;
