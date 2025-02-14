@@ -1,19 +1,100 @@
-/* Resetovanje osnovnih stilova */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Osnovni stil za telo stranice */
+::after, ::before {
+    box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #f8f9fa;
+    background-color: #fff;
 }
 
-.container{
+.kontejner{
+    display:flex;
+    justify-self: center;
+    width: 100%;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.donja-linija{
+    border-bottom: solid rgba(139, 139, 139, 0.2) 1px;
+}
+.gornji_header{
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    width: 60vw;
+    padding: 5px 0;
+}
+.gornji_header_text{
+    color: rgb(117, 117, 117);
+    font-size: 11px;
+    font-weight: 600;
+}
 
+.navigacija{
+    align-items: center;
+}
+.header_nav-menu-item{
+    padding: 0 10px;
+    transition: .2s all;
+}
+.header_nav-menu-item:hover{
+    color:#117e99;
+    cursor: pointer;
+}
+
+.nav_right-border{
+    position: relative;
+}
+.nav_right-border::before{
+    background: rgba(0, 0, 0, 0.08);
+    content: "";
+    width: 1px;
+    height: 16px;
+    position:absolute;
+    display: block;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    right: 0;
+}
+.hader_nav-desni{
+    margin-left: 15px;
+    font-size: 14px;
+}
+.ikone{
+    padding: 0 5px;
+}
+.ikone a{
+    transition: all 0.2s ease;
+    border-radius: 100%;
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    text-align: center;
+    /* color: var(--dark--200) !important; */
+    text-decoration: none;
+    font-size: 12.8px;
+    font-size: 0.8rem;
+}
+.ikone:hover a{
+    color: white;
+    border-radius: 100%;
+}
+.ikone-fb:hover a{
+    background-color: #3b5a9a ;
+}
+.ikone-tw:hover a{
+    background-color: #1aa9e1 ;
+}
+.ikone-li:hover a{
+    background-color: #0073b2 ;
 }
