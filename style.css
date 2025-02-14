@@ -14,7 +14,7 @@ body {
     background-color: #fff;
 }
 
-.kontejner{
+.puna_duzina{
     display:flex;
     justify-self: center;
     width: 100%;
@@ -26,12 +26,14 @@ body {
 .donja-linija{
     border-bottom: solid rgba(139, 139, 139, 0.2) 1px;
 }
+.kontejner{
+    width: 60vw;
+    justify-self: center;
+}
 /* GORNJI HEADER */
 .gornji_header{
     justify-content: space-between;
     align-items: center;
-    justify-self: center;
-    width: 60vw;
     padding: 5px 0;
 }
 .gornji_header_text{
@@ -97,4 +99,83 @@ body {
 }
 .ikone-li:hover a{
     background-color: #0073b2 ;
+}
+
+/* Srednji header */
+.srednji_header{
+    padding: 20px 0;
+}
+.logotip{
+    width: 150px;
+}
+.pretraga_block{
+}
+.pretraga{
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.input_pretraga-lijevo{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f4f4f4;
+    border-radius: 1.3rem 0 0 1.3rem;
+    border: 0;
+    width: 300px;
+    height: auto;
+    font-size: 14px;
+    padding: 0.6rem 1.4rem;
+    color: #8d8d8d;
+}
+.input_pretraga-lijevo:focus{
+    outline: none;
+}
+.input_pretraga-desno{
+    margin-left: calc(var(--bs-border-width)* -1);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #f4f4f4;
+    border-radius: 0 1.3rem 1.3rem 0;
+}
+.pretraga_select-wrapper{
+    position: relative;
+}
+.pretraga_select{
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+    color: #8d8d8d;
+    height: 100%;
+    font-size: 0.85rem;
+    line-height: 1.85;
+}
+.btn-pretraga{
+    background: transparent !important;
+    border: 0;
+    box-shadow: none !important;
+    position: relative;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: color .15s ease-in-out;
+}
+.btn-pretraga:hover{
+    color: #117e99;
+}
+.proba{
+    position: relative;
+    display: inline-block;
+}
+.clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #28588f;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
 }

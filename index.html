@@ -17,10 +17,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="kontejner">
+    <div class="puna_duzina">
         <header>
+            <!-- Gornji header -->
             <div class="donja-linija">
-                <div class="flex gornji_header gornji_header_text">
+                <div class="flex kontejner gornji_header gornji_header_text">
                     <div>
                         <p>FREE RETURNS, STANDARD SHIPPING ORDERS $99+</p>
                     </div>
@@ -41,10 +42,43 @@
                     </nav>
                 </div>
             </div>
-            
+            <!-- Srednji header -->
+            <div class="donja-linija">
+                <div class="flex kontejner srednji_header">
+                    <div><img class="logotip" src="/images/logotip.png" alt=""></div>
+                    <div class="pretraga_block">
+                        <form action="/search" method="GET">
+                            <div class="pretraga flex">
+                                <div class="proba">
+                                    <input class="input_pretraga-lijevo" id="myInput" type="text" name="query" placeholder="Search...">
+                                    <span class="clear-btn" onclick="clearInput()">✖</span>
+                                </div>
+                                <div class="input_pretraga-desno flex">
+                                    <div class="pretraga_select-wrapper">
+                                        <select class="pretraga_select" name="category">
+                                            <option value="all" selected>All Categories</option>
+                                            <option value="">Fashion</option>
+                                            <option value="electronics">Electronics</option>
+                                            <option value="motors">Motors</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-pretraga" type="submit" aria-label="Search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <!-- Donji header -->
         </header>
         <main></main>
         <footer></footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
