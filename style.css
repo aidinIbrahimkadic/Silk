@@ -132,14 +132,15 @@ img {
   background-color: #f4f4f4;
   border-radius: 1.3rem 0 0 1.3rem;
   border: 0;
-  width: 300px;
-  height: auto;
+  width: 400px;
+  height: 40px;
   font-size: 14px;
   padding: 0.6rem 1.4rem;
-  color: #8d8d8d;
+  color: #e7e7e7;
 }
 .input_pretraga-lijevo:focus {
   outline: none;
+  color: #1d1d1d;
 }
 .input_pretraga-desno {
   margin-left: calc(var(--bs-border-width) * -1);
