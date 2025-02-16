@@ -528,18 +528,20 @@ img {
   bottom: -50px;
   left: 0;
   width: 100%;
-  background: rgba(0, 123, 255, 0.9);
+  background: rgba(0, 123, 255, 0.6);
   color: white;
   text-align: center;
-  padding: 10px 12px;
+  padding: 14px 12px;
   font-size: 16px;
   font-weight: bold;
   border: none;
-  transition: bottom 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0;
   z-index: 10;
 }
-
+.hover-btn:hover {
+  background: rgba(26, 114, 208, 0.973);
+}
 .link-na-proizvod:hover .produkt_foto-blok::after {
   background-color: rgba(0, 0, 0, 0.3);
 }
