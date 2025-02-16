@@ -94,3 +94,23 @@ function updatePagination() {
 }
 
 generatePagination(); // Pokreće paginaciju na početku
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".donji_header-blok");
+  const headerOffset = header.offsetTop; // Prvobitna pozicija headera
+  const headerHeight = header.offsetHeight; // Visina headera
+  const spacer = document.createElement("div"); // Prazan div kao razmak
+  spacer.style.height = `${headerHeight}px`;
+  spacer.style.display = "none"; // Sakriven dok nije potrebno
+  header.parentNode.insertBefore(spacer, header.nextSibling); // Dodaj spacer ispod headera
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset >= headerOffset) {
+      header.classList.add("fixed-header");
+      spacer.style.display = "block"; // Prikaži razmak ispod
+    } else {
+      header.classList.remove("fixed-header");
+      spacer.style.display = "none"; // Sakrij razmak kada se vrati gore
+    }
+  });
+});
