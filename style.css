@@ -258,7 +258,7 @@ img {
   background: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease-in-out;
-  padding: 20px 30px 20px 20px;
+  padding: 20px 10px 20px 20px;
   z-index: 1000;
 }
 
@@ -310,6 +310,20 @@ img {
 }
 .desni_sidebar-lista {
   margin-top: 10px;
+  max-height: 70vh;
+  padding-right: 15px;
+  overflow-y: scroll;
+}
+.desni_sidebar-lista::-webkit-scrollbar {
+  width: 4px;
+}
+.desni_sidebar-lista::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.desni_sidebar-lista::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .desni_sidebar-produkt {
@@ -346,13 +360,11 @@ img {
   right: -9px;
   width: 18px;
   height: 18px;
-  /* background-color: #f0f0f0; */
 }
 .desni_sidebar-produkt--info {
   display: flex;
   padding: 2px 0;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 .desni_sidebar-produkt-naslov {
   font-weight: 600;
@@ -374,12 +386,14 @@ img {
   justify-content: space-between;
   font-size: 14px;
   font-weight: 700;
+  padding-right: 15px;
 }
 .desni_sidebar-cijena {
   font-size: 16px;
 }
 .btns {
   padding: 10px 20px;
+  margin-right: 15px;
   border: none;
   cursor: pointer;
   font-size: 14px;
