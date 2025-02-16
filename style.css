@@ -689,6 +689,70 @@ img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+  padding: 100px 200px;
+  background-color: #222529;
+  color: #e6e6e6;
+}
+.footer-naslov {
+  font-weight: 500;
+}
+.footer-lijevo {
+  display: flex;
+  width: 30vw;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+}
+.footer-info {
+  font-size: 12px;
+  color: #a8a8a8;
+}
+
+.footer-desno {
+  display: flex;
+  width: 30vw;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-opis {
+  font-size: 14px;
+  color: #a8a8a8;
+}
+.footer-input {
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  background-color: rgb(56, 55, 60);
+  color: #fff;
+}
+.footer-input:focus {
+  outline: none;
+}
+.footer-btn {
+  padding: 15px 20px;
+  border-radius: 50px;
+  width: 50%;
+  justify-self: center;
+  border: none;
+  cursor: pointer;
+  background-color: #0073b2;
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-btn:hover {
+  background-color: #07689d;
+}
+
 /* PONZIVNOST */
 @media (max-width: 1024px) {
   .grid_main {
