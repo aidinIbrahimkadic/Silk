@@ -200,54 +200,422 @@
       </header>
       <main class="flex">
         <div class="grid_main kontejner">
-          <div class="kartica">
-            <div class="produkt_foto-blok">
-              <img src="/images/product2.jpg" alt="" />
-            </div>
-            <div>
-              <span>opis</span>
-              <h3>Produkt name</h3>
-              <span>cijena</span>
-            </div>
-          </div>
-          <div class="kartica">
-            <div class="produkt_foto-blok">
-              <img src="/images/product2.jpg" alt="" />
-            </div>
-            <div>
-              <span>opis</span>
-              <h3>Produkt name</h3>
-              <span>cijena</span>
-            </div>
-          </div>
-          <div class="kartica">
-            <div class="produkt_foto-blok">
-              <img src="/images/product2.jpg" alt="" />
-            </div>
-            <div>
-              <span>opis</span>
-              <h3>Produkt name</h3>
-              <span>cijena</span>
+          <div class="kartica akcija">
+            <a href="#" class="link-na-proizvod">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <!-- stara cijena -->
+                <span class="stara-cijena">$99,00</span>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">10</span>
+              </div>
             </div>
           </div>
           <div class="kartica">
-            <div class="produkt_foto-blok">
-              <img src="/images/product2.jpg" alt="" />
-            </div>
-            <div>
-              <span>opis</span>
-              <h3>Produkt name</h3>
-              <span>cijena</span>
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
             </div>
           </div>
           <div class="kartica">
-            <div class="produkt_foto-blok">
-              <img src="/images/product2.jpg" alt="" />
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
             </div>
-            <div>
-              <span>opis</span>
-              <h3>Produkt name</h3>
-              <span>cijena</span>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
+            </div>
+          </div>
+          <div class="kartica">
+            <a class="link-na-proizvod" href="#">
+              <div class="produkt_foto-blok">
+                <img src="/images/product2.jpg" alt="" />
+                <button class="hover-btn">Više detalja</button>
+              </div>
+            </a>
+            <div class="proizvod-info">
+              <span class="kategorija-proizvoda">Kategorija</span>
+              <h3 class="naziv-proizvoda">Kolaž papir sorto</h3>
+              <div>
+                <span class="cijena-proizvoda">0,34 KM</span>
+              </div>
+              <div class="input-wrapper">
+                <button class="btn btn-delete" onclick="decreaseValue()">
+                  −
+                </button>
+                <input type="text" id="counter" value="0" readonly />
+                <button class="btn btn-add" onclick="increaseValue()">+</button>
+              </div>
+              <div>
+                <span class="proizvod-kolicina">Količina pakovanja: </span
+                ><span class="step-value">15</span>
+              </div>
             </div>
           </div>
         </div>

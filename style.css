@@ -456,10 +456,172 @@ img {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
+
+  /* za dugme */
+  position: relative;
+  overflow: hidden;
 }
+.produkt_foto-blok {
+  position: relative;
+}
+
 .produkt_foto-blok img {
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+
   width: 100%;
 }
+
+.kartica {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Prevents content from overflowing */
+}
+
+.kartica.akcija::after {
+  content: "Akcija";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+
+.produkt_foto-blok {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image settings */
+.produkt_foto-blok img {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Dark overlay effect on hover */
+/* .kartica:hover .produkt_foto-blok img {
+  opacity: 1; /* Darkens the image */
+/* } */
+.produkt_foto-blok::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.3s all ease-in-out;
+  z-index: 6;
+}
+
+/* Button styling */
+.hover-btn {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 123, 255, 0.9);
+  color: white;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  transition: bottom 0.3s ease-in-out;
+  opacity: 0;
+  z-index: 10;
+}
+
+.link-na-proizvod:hover .produkt_foto-blok::after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.link-na-proizvod:hover .hover-btn {
+  bottom: 0;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.proizvod-info {
+  padding: 10px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kategorija-proizvoda {
+  font-size: 12px;
+  font-weight: 600;
+  color: #696969;
+}
+.naziv-proizvoda {
+  font-size: 18px;
+  font-weight: 400;
+}
+.stara-cijena {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #d13b28;
+}
+.cijena-proizvoda {
+  font-size: 20px;
+  font-weight: 600;
+}
+.proizvod-kolicina {
+  font-size: 12px;
+  color: rgb(105, 105, 105);
+  font-weight: 600;
+}
+.step-value {
+  font-size: 14px;
+  color: rgb(84, 84, 84);
+  font-weight: 600;
+}
+.input-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn-delete {
+  background-color: #e35454;
+}
+.btn-delete:hover {
+  background-color: #e43f3f;
+}
+.btn-add {
+  background-color: #007bff;
+}
+.btn-add:hover {
+  background-color: #0056b3;
+}
+
+input {
+  height: 40px;
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  pointer-events: none; /* Prevents manual typing */
+}
+
 /* RESPONZIVNOST */
 @media (max-width: 1024px) {
   .grid_main {
