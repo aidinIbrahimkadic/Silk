@@ -7,3 +7,4 @@
 2. Product page
 3. View Cart
 4. Checkout
+5. Responsive
