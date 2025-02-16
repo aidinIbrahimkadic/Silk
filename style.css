@@ -613,15 +613,15 @@ img {
   background-color: #0056b3;
 }
 
-input {
+#counter {
+  text-align: center;
+  pointer-events: none;
   height: 40px;
   width: 50px;
-  text-align: center;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;
-  pointer-events: none; /* Prevents manual typing */
 }
 
 /* RESPONZIVNOST */
