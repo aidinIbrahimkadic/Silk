@@ -106,7 +106,14 @@ img {
   background-color: #1aa9e1;
 }
 .ikone-li:hover a {
-  background-color: #0073b2;
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
 }
 
 /* Srednji header */
