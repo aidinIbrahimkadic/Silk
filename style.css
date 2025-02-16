@@ -258,7 +258,7 @@ img {
   background: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease-in-out;
-  padding: 40px 30px 20px 20px;
+  padding: 20px 30px 20px 20px;
   z-index: 1000;
 }
 
@@ -271,7 +271,9 @@ img {
   font-weight: 100;
   font-size: 20px;
 }
-
+.close-btn:hover {
+  color: #808080;
+}
 .cart-sidebar.open {
   right: 0;
 }
