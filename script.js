@@ -114,3 +114,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".donji-header li");
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      // Ukloni 'active' klasu sa svih elemenata
+      menuItems.forEach((el) => el.classList.remove("active"));
+
+      // Dodaj 'active' klasu na kliknuti element
+      this.classList.add("active");
+    });
+  });
+});
