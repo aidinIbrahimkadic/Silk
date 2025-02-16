@@ -52,3 +52,45 @@ document.querySelectorAll(".kartica").forEach((kartica) => {
     }
   });
 });
+
+// paginacija
+const totalPages = 10; // Ukupan broj stranica
+let currentPage = 1; // Početna stranica
+
+function generatePagination() {
+  const pageContainer = document.querySelector(".page-numbers");
+  pageContainer.innerHTML = ""; // Resetuje paginaciju
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageNumber = document.createElement("span");
+    pageNumber.textContent = i;
+    pageNumber.classList.add("page");
+
+    if (i === currentPage) {
+      pageNumber.classList.add("active");
+    }
+
+    pageNumber.addEventListener("click", () => {
+      currentPage = i;
+      updatePagination();
+    });
+
+    pageContainer.appendChild(pageNumber);
+  }
+}
+
+function changePage(direction) {
+  if (
+    (direction === -1 && currentPage > 1) ||
+    (direction === 1 && currentPage < totalPages)
+  ) {
+    currentPage += direction;
+    updatePagination();
+  }
+}
+
+function updatePagination() {
+  generatePagination();
+}
+
+generatePagination(); // Pokreće paginaciju na početku
