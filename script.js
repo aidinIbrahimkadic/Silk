@@ -180,3 +180,7 @@ function updatePrice() {
   document.getElementById("price-value").textContent =
     document.getElementById("price-slider").value;
 }
+
+function removeRow(button) {
+  button.closest("tr").remove(); // Removes the table row
+}

@@ -421,6 +421,7 @@ img {
 .btn-view {
   background-color: #e2e2e2;
   color: #1d1d1d;
+  text-align: center;
 }
 .btn-view:hover {
   background-color: #eeeeee;
@@ -965,6 +966,190 @@ footer {
 .osvjezi-btn {
   margin-top: 10px;
 }
+
+/* KORPA */
+.korpa-content {
+  display: flex;
+}
+.korpa-content-tabela {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.osvjezi-korpu {
+  width: 30%;
+  margin-top: 10px;
+  align-self: end;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(234, 231, 231);
+  color: #222529;
+  font-weight: 600;
+  transition: 0.2s all ease-in-out;
+}
+.osvjezi-korpu:hover {
+  background-color: #3378c2;
+  color: #fff;
+}
+.korpa-heading {
+  font-size: 24px;
+  color: #222529;
+  padding: 30px 0;
+}
+.korpa-tabela-produkt:hover {
+  color: #0056b3;
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+}
+
+/* Table Head */
+.product-table thead tr {
+  border-bottom: 2px solid #ddd;
+}
+
+.product-table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Table Rows */
+.product-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.product-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Image Column */
+.image-column {
+  width: 80px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/* Remove Button (X) */
+.remove-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* Quantity Input */
+.product-table input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  text-align: center;
+}
+
+.card-totals {
+  background: white;
+  padding: 20px;
+  border: solid 1px;
+  border-radius: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  font-size: 14px;
+}
+
+.card-totals h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.totals-row.total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.shipping-options p,
+.address-fields p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.shipping-options label {
+  display: block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.address-fields input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 15px 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  background: #272727;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 1px;
+  transition: 0.3s ease-in-out;
+}
+
+.checkout-btn:hover {
+  background: #3d3d3d;
+}
+
 /* PONZIVNOST */
 @media (max-width: 1024px) {
   .grid_main {
