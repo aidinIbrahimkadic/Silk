@@ -979,7 +979,7 @@ footer {
 .osvjezi-korpu {
   width: 30%;
   margin-top: 10px;
-  align-self: end;
+  align-self: start;
   padding: 15px 20px;
   border: none;
   cursor: pointer;
