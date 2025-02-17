@@ -199,6 +199,11 @@
         </div>
       </header>
       <main class="flex main">
+        <div class="filter-btn-kontejner kontejner">
+          <button class="filter-btn" onclick="toggleSidebar()">
+            <i class="fa fa-filter" aria-hidden="true"></i> FILTER
+          </button>
+        </div>
         <div class="grid_main kontejner">
           <div class="kartica akcija">
             <a href="#" class="link-na-proizvod">
@@ -634,48 +639,51 @@
       </main>
       <footer>
         <div class="footer-block">
-            <div class="footer-lijevo">
-                <span class="footer-naslov">KONTAKT INFO</span>
-                <div class="footer-flex">
-                  <span>ADRESA</span>
-                  <span class="footer-info">Bukva bb, 74260 Tešanj</span>
-                </div>
-                <div class="footer-flex">
-                  <span>TELEFON</span>
-                  <a class="footer-info" href="tel:+387 61 165 593"
-                    >+387 61 165 593</a
-                  >
-                </div>
-                <div class="footer-flex">
-                  <span>EMAIL</span>
-                  <a href="mailto:info@silktradeshop.ba" class="footer-info"
-                    >info@silktradeshop.ba</a
-                  >
-                </div>
-                <ul class="footer-ikone">
-                  <li class="ikone ikone-fb">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  </li>
-                  <li class="ikone ikone-tw">
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  </li>
-                  <li class="ikone ikone-li">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="footer-desno">
-                <span class="footer-naslov">NEWSLETTER</span>
-      
-                <p class="footer-opis">
-                  Pretplatite se na naš newsletter i dobijajte najnovije informacije o
-                  novim proizvodima i promocijama.
-                </p>
-                <input class="footer-input" type="text" placeholder="Email adresa" />
-                <button class="footer-btn">SUBSCRIBE</button>
-              </div>
+          <div class="footer-lijevo">
+            <span class="footer-naslov">KONTAKT INFO</span>
+            <div class="footer-flex">
+              <span>ADRESA</span>
+              <span class="footer-info">Bukva bb, 74260 Tešanj</span>
+            </div>
+            <div class="footer-flex">
+              <span>TELEFON</span>
+              <a class="footer-info" href="tel:+387 61 165 593"
+                >+387 61 165 593</a
+              >
+            </div>
+            <div class="footer-flex">
+              <span>EMAIL</span>
+              <a href="mailto:info@silktradeshop.ba" class="footer-info"
+                >info@silktradeshop.ba</a
+              >
+            </div>
+            <ul class="footer-ikone">
+              <li class="ikone ikone-fb">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li class="ikone ikone-tw">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li class="ikone ikone-li">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-desno">
+            <span class="footer-naslov">NEWSLETTER</span>
+
+            <p class="footer-opis">
+              Pretplatite se na naš newsletter i dobijajte najnovije informacije
+              o novim proizvodima i promocijama.
+            </p>
+            <input
+              class="footer-input"
+              type="text"
+              placeholder="Email adresa"
+            />
+            <button class="footer-btn">SUBSCRIBE</button>
+          </div>
         </div>
-        
       </footer>
     </div>
 
@@ -890,29 +898,76 @@
     </div>
     <div id="overlay" class="overlay"></div>
     <div id="popup" class="popup">
-        <span class="close-btn-popup" onclick="closePopup()">✖</span>
-        <div class="popup-kontejner">
-            <div class="popup-lijevi">
-                <img class="popup-logotip" src="images/logotip.png" alt="">
-                <h3 class="popup-naslov">Dobrodošli Klijent1 Silkshop</h3>
-                <span>Hvala što ste se prijavili na našu web stranicu.</span>
-                <span>Uživajte u kupovini!</span>
-            </div>
-            <div class="popup-desni">
-                <span class="popup-newsletter">NEWSLETTER</span>
-      
-                <p class="popup-opis">
-                  Pretplatite se na naš newsletter i dobijajte najnovije informacije o
-                  novim proizvodima i promocijama.
-                </p>
-                <input class="footer-input popup-input" type="text" placeholder="Email adresa" />
-                <button class="footer-btn popup-newsletter-btn">SUBSCRIBE</button>
-            </div>
+      <span class="close-btn-popup" onclick="closePopup()">✖</span>
+      <div class="popup-kontejner">
+        <div class="popup-lijevi">
+          <img class="popup-logotip" src="images/logotip.png" alt="" />
+          <h3 class="popup-naslov">Dobrodošli Klijent1 Silkshop</h3>
+          <span>Hvala što ste se prijavili na našu web stranicu.</span>
+          <span>Uživajte u kupovini!</span>
         </div>
+        <div class="popup-desni">
+          <span class="popup-newsletter">NEWSLETTER</span>
+
+          <p class="popup-opis">
+            Pretplatite se na naš newsletter i dobijajte najnovije informacije o
+            novim proizvodima i promocijama.
+          </p>
+          <input
+            class="footer-input popup-input"
+            type="text"
+            placeholder="Email adresa"
+          />
+          <button class="footer-btn popup-newsletter-btn">SUBSCRIBE</button>
+        </div>
+      </div>
     </div>
+
+    <!-- Lijevi sidebar filter -->
+
+    <div class="sidebar" id="sidebar">
+      <span class="close-btn-lijevi-sidebar" onclick="toggleSidebar()">✖</span>
+
+      <!-- Search Bar -->
+      <div class="search-box">
+        <input type="text" placeholder="Traži..." id="search" />
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-section">
+        <h3 onclick="toggleCategory('categories')">
+          Kategorije <span id="categories-icon">-</span>
+        </h3>
+        <div class="category-list" id="categories">
+          <label><input type="checkbox" /> Electronics</label>
+          <label><input type="checkbox" /> Clothing</label>
+          <label><input type="checkbox" /> Home & Garden</label>
+          <label><input type="checkbox" /> Sports</label>
+          <label><input type="checkbox" /> Beauty</label>
+        </div>
+      </div>
+
+      <!-- Price Range Slider -->
+      <div class="filter-section">
+        <h3>Raspon cijena</h3>
+        <input
+          type="range"
+          id="price-slider"
+          min="0"
+          max="500"
+          value="250"
+          oninput="updatePrice()"
+        />
+        <p>Max cijena: <span id="price-value">250</span> KM</p>
+      </div>
+      <button class="footer-btn popup-newsletter-btn osvjezi-btn">
+        Osvježi prikaz
+      </button>
+    </div>
+
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>
-    
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -129,11 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // POPUP
 function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }
 
 // To the top
@@ -142,14 +141,42 @@ const toTopBtn = document.getElementById("toTopBtn");
 
 // Show the button when scrolling down
 window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        toTopBtn.classList.add("show");
-    } else {
-        toTopBtn.classList.remove("show");
-    }
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    toTopBtn.classList.add("show");
+  } else {
+    toTopBtn.classList.remove("show");
+  }
 };
 
 // Smooth scroll to the top
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// left sidebar filter
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+// Toggle Categories List
+function toggleCategory(id) {
+  const section = document.getElementById(id);
+  const icon = document.getElementById(id + "-icon");
+
+  if (section.classList.contains("hidden")) {
+    section.classList.remove("hidden");
+    icon.textContent = "-";
+  } else {
+    section.classList.add("hidden");
+    icon.textContent = "+";
+  }
+}
+
+// Update Price Value on Slider Move
+function updatePrice() {
+  document.getElementById("price-value").textContent =
+    document.getElementById("price-slider").value;
 }
