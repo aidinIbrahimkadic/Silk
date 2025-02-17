@@ -1,11 +1,11 @@
 1. Početna
     a) blok na pocetku👍
-    b) alert kad se doda novi produkt
+    b) alert kad se doda novi produkt?
     c) filter lijevo
     d) 4*4 produkts 👍
     e) footer 👍
     f) paginacija 👍
-    8) to the top dugme
+    8) to the top dugme 👍
 2. Product page
 3. View Cart
 4. Checkout 
