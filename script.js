@@ -135,3 +135,21 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
     document.getElementById("overlay").style.display = "none";
 }
+
+// To the top
+// Get the button
+const toTopBtn = document.getElementById("toTopBtn");
+
+// Show the button when scrolling down
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        toTopBtn.classList.add("show");
+    } else {
+        toTopBtn.classList.remove("show");
+    }
+};
+
+// Smooth scroll to the top
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
