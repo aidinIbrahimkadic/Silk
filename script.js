@@ -95,12 +95,12 @@ function updatePagination() {
 
 //Moguci bug
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("index.html") ) {
-      generatePagination(); // Run pagination only on index.html
+  if (window.location.pathname.endsWith("index.html")) {
+    generatePagination(); // Run pagination only on index.html
   }
 });
 
- // Pokreće paginaciju na početku
+// Pokreće paginaciju na početku
 // generatePagination();
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -193,7 +193,6 @@ function removeRow(button) {
   button.closest("tr").remove(); // Removes the table row
 }
 
-
 function updateQuantity(button, change) {
   const row = button.closest("tr");
   const quantityInput = row.querySelector(".quantity-input");
@@ -204,7 +203,7 @@ function updateQuantity(button, change) {
   const price = parseFloat(priceElement.textContent.replace("KM", "").trim());
 
   let currentQty = parseInt(quantityInput.value, 10);
-  let newQty = currentQty + (minQty * change);
+  let newQty = currentQty + minQty * change;
 
   // Ensure quantity does not go below zero
   if (newQty < 0) newQty = 0;
@@ -214,10 +213,7 @@ function updateQuantity(button, change) {
   totalField.textContent = `${(newQty * price).toFixed(2)} KM`;
 
   updateCartTotal();
-
 }
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   updateAllTotals(); // Ensure all totals are set on page load
@@ -225,25 +221,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to update total prices on page load
 function updateAllTotals() {
-  document.querySelectorAll(".product-table tbody tr").forEach(row => {
-      const quantityInput = row.querySelector(".quantity-input");
-      const priceElement = row.querySelector(".price");
-      const totalField = row.querySelector(".total");
+  document.querySelectorAll(".product-table tbody tr").forEach((row) => {
+    const quantityInput = row.querySelector(".quantity-input");
+    const priceElement = row.querySelector(".price");
+    const totalField = row.querySelector(".total");
 
-      if (!quantityInput || !priceElement || !totalField) return;
+    if (!quantityInput || !priceElement || !totalField) return;
 
-      const price = parseFloat(priceElement.textContent.replace("KM", "").trim());
-      const currentQty = parseInt(quantityInput.value, 10);
+    const price = parseFloat(priceElement.textContent.replace("KM", "").trim());
+    const currentQty = parseInt(quantityInput.value, 10);
 
-      if (!isNaN(price) && !isNaN(currentQty)) {
-          totalField.textContent = `${(currentQty * price).toFixed(2)} KM`;
-      }
+    if (!isNaN(price) && !isNaN(currentQty)) {
+      totalField.textContent = `${(currentQty * price).toFixed(2)} KM`;
+    }
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  updateCartTotal(); // Automatically calculate total on page load
+  if (window.location.pathname.includes("korpa.html")) {
+    updateCartTotal(); // Run only on korpa.html
+  }
 });
 // Refresh totals manually when the button is clicked
 // document.querySelector(".osvjezi-korpu").addEventListener("click", function () {
@@ -254,17 +251,88 @@ function updateCartTotal() {
   let totalSum = 0;
 
   // Loop through all table rows
-  document.querySelectorAll(".product-table tbody tr").forEach(row => {
-      const totalCell = row.querySelector(".total");
-      
-      if (totalCell) {
-          const totalValue = parseFloat(totalCell.textContent.replace("KM", "").trim());
-          if (!isNaN(totalValue)) {
-              totalSum += totalValue; // Add each product's total
-          }
+  document.querySelectorAll(".product-table tbody tr").forEach((row) => {
+    const totalCell = row.querySelector(".total");
+
+    if (totalCell) {
+      const totalValue = parseFloat(
+        totalCell.textContent.replace("KM", "").trim()
+      );
+      if (!isNaN(totalValue)) {
+        totalSum += totalValue; // Add each product's total
       }
+    }
   });
 
   // Update cart total price
-  document.getElementById("total-price").innerHTML = `<strong>${totalSum.toFixed(2)} KM</strong>`;
+  document.getElementById(
+    "total-price"
+  ).innerHTML = `<strong>${totalSum.toFixed(2)} KM</strong>`;
+}
+
+// F***ING NOTIFICATIONS
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach event listeners to all buttons dynamically
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("notification-btn-add")) {
+      increaseValue(event.target);
+    } else if (event.target.classList.contains("notification-btn-delete")) {
+      decreaseValue(event.target);
+    }
+  });
+});
+
+function increaseValue(button) {
+  if (!button) {
+    return;
+  }
+  const wrapper = button.closest(".proizvod-info");
+  if (!wrapper) return;
+
+  const counter = wrapper.querySelector(".counter"); // Select the counter input
+  const stepValue =
+    parseInt(wrapper.querySelector(".step-value").textContent) || 1;
+  let counterValue = parseInt(counter.value);
+
+  if (counterValue === stepValue) {
+    showNotification("Proizvod dodat u korpu", "added");
+  }
+
+  counter.value = counterValue;
+}
+
+// Function to decrease the counter value by step value
+function decreaseValue(button) {
+  if (!button) {
+    return;
+  }
+  const wrapper = button.closest(".proizvod-info");
+  if (!wrapper) return;
+
+  const counter = wrapper.querySelector(".counter");
+
+  let counterValue = parseInt(counter.value);
+
+  if (counterValue === 0) {
+    showNotification("Proizvod uklonjen iz korpe", "removed");
+  }
+}
+
+// Function to show notifications
+function showNotification(message, type) {
+  const notification = document.createElement("div");
+  notification.className = `notification-popup ${type}`;
+  notification.innerHTML = `<div class="notifikacija-ikona"><i class="fa ${
+    type === "added" ? "fa-check" : "fa-times"
+  }" aria-hidden="true"></i></div> ${message}`;
+
+  document.getElementById("notification-container").appendChild(notification);
+
+  setTimeout(() => {
+    notification.classList.add("fade-out");
+    setTimeout(() => {
+      notification.remove();
+    }, 500);
+  }, 3000);
 }

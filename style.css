@@ -462,7 +462,7 @@ img {
 .kartica {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: space-between;
   height: 500px;
@@ -562,8 +562,10 @@ img {
   opacity: 1;
   cursor: pointer;
 }
-.blok-slika, .blok-slika a, .produkt_foto-blok{
-  height:100%
+.blok-slika,
+.blok-slika a,
+.produkt_foto-blok {
+  height: 100%;
 }
 .proizvod-info {
   padding: 10px 0 20px;
@@ -627,7 +629,7 @@ img {
   background-color: #0056b3;
 }
 
-#counter {
+.counter {
   text-align: center;
   pointer-events: none;
   height: 40px;
@@ -796,6 +798,8 @@ footer {
 .popup-kontejner {
   display: flex;
   height: 100%;
+  background-color: #f9f4e4;
+  justify-content: center;
   gap: 10px;
 }
 .popup-lijevi {
@@ -806,13 +810,17 @@ footer {
   align-items: center;
   justify-content: center;
 }
+.popup-lijevi span {
+  font-size: 16px;
+}
 .popup-logotip {
-  width: 200px;
+  width: 250px;
   margin-bottom: 45px;
 }
 
 .popup-naslov {
   margin-bottom: 20px;
+  font-size: 24px;
 }
 .popup-desni {
   width: 100%;
@@ -894,6 +902,7 @@ footer {
   background: #ffffff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
+
   transition: 0.3s;
   z-index: 1000;
   overflow-y: auto;
@@ -969,9 +978,19 @@ footer {
   margin: 10px 0;
 }
 .osvjezi-btn {
-  margin-top: 10px;
+  margin-top: 30px;
+  padding: 15px 20px;
+  border-radius: 1px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: #0073b2;
+  color: #fff;
+  font-weight: 600;
 }
-
+.osvjezi-btn:hover {
+  background-color: #05669a;
+}
 /* KORPA */
 .korpa-content {
   display: flex;
@@ -1156,9 +1175,9 @@ hr {
 }
 
 .min-qty {
- font-weight: 600;
+  font-weight: 600;
 }
-.quantity-control-extra{
+.quantity-control-extra {
   align-items: center;
   justify-content: start;
   gap: 5px;
@@ -1174,7 +1193,8 @@ hr {
   pointer-events: none;
 }
 
-.decrease-btn, .increase-btn {
+.decrease-btn,
+.increase-btn {
   width: 30px;
   height: 30px;
   font-size: 18px;
@@ -1231,6 +1251,53 @@ hr {
   outline: none;
 }
 
+/* Notification */
+#notification-container {
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Notification Style */
+.notification-popup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 40px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+.notifikacija-ikona {
+  font-size: 18px;
+}
+/* Different colors for added/removed notifications */
+.notification-popup.added {
+  background-color: #28a745; /* Green for adding */
+}
+
+.notification-popup.removed {
+  background-color: #dc3545; /* Red for removing */
+}
+
+/* Fade-out effect */
+.notification-popup.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.notification-icon {
+  font-size: 20px;
+}
 /* PONZIVNOST */
 @media (max-width: 1024px) {
   .grid_main {
