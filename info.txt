@@ -1,15 +1,15 @@
 1. Početna 👍
     a) blok na pocetku👍
-    b) alert kad se doda novi produkt?
+    b) alert kad se doda novi produkt? 👍
     c) filter lijevo 👍
     d) 4*4 produkts 👍
     e) footer 👍
     f) paginacija 👍
     g) to the top dugme 👍
-    h) sve slike strech po height
-2. View Cart 
-    a) automatski kolicina dugme +/-
-    b) 2 dropdown-a u Checkout
+    h) sve slike strech po height 👍
+2. View Cart 👍
+    a) automatski kolicina dugme +/- 👍
+    b) 2 dropdown-a u Checkout 👍
 3. Email dizajn
 4. Product page
 5. Responsive
