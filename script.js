@@ -34,7 +34,7 @@ function removeProduct(element) {
 
 document.querySelectorAll(".kartica").forEach((kartica) => {
   const step = parseInt(kartica.querySelector(".step-value").textContent); // Get step value
-  const input = kartica.querySelector("#counter");
+  const input = kartica.querySelector(".counter");
   const decreaseBtn = kartica.querySelector(".btn:first-child");
   const increaseBtn = kartica.querySelector(".btn:last-child");
 
@@ -46,8 +46,13 @@ document.querySelectorAll(".kartica").forEach((kartica) => {
   // Decrease value by step, but allow reaching 0
   decreaseBtn.addEventListener("click", () => {
     let currentValue = parseInt(input.value);
+
+    // 🛑 Check if we are decreasing from `step-value` to `0`
+    if (currentValue === step) {
+      decreaseValue(decreaseBtn); // Call the function BEFORE decreasing
+    }
+
     if (currentValue > 0) {
-      // Allows reaching 0 but not negative values
       input.value = currentValue - step;
     }
   });
@@ -277,9 +282,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (event) {
     if (event.target.classList.contains("notification-btn-add")) {
       increaseValue(event.target);
-    } else if (event.target.classList.contains("notification-btn-delete")) {
-      decreaseValue(event.target);
     }
+    // } else if (event.target.classList.contains("notification-btn-delete")) {
+    //   decreaseValue(event.target);
+    // }
   });
 });
 
@@ -289,6 +295,7 @@ function increaseValue(button) {
   }
   const wrapper = button.closest(".proizvod-info");
   if (!wrapper) return;
+  const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
 
   const counter = wrapper.querySelector(".counter"); // Select the counter input
   const stepValue =
@@ -296,7 +303,10 @@ function increaseValue(button) {
   let counterValue = parseInt(counter.value);
 
   if (counterValue === stepValue) {
-    showNotification("Proizvod dodat u korpu", "added");
+    showNotification(
+      `Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span>dodat u korpu`,
+      "added"
+    );
   }
 
   counter.value = counterValue;
@@ -309,13 +319,19 @@ function decreaseValue(button) {
   }
   const wrapper = button.closest(".proizvod-info");
   if (!wrapper) return;
+  const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
+
+  const stepValue =
+    parseInt(wrapper.querySelector(".step-value").textContent) || 1;
 
   const counter = wrapper.querySelector(".counter");
-
   let counterValue = parseInt(counter.value);
 
-  if (counterValue === 0) {
-    showNotification("Proizvod uklonjen iz korpe", "removed");
+  if (counterValue === stepValue) {
+    showNotification(
+      `Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span> uklonjen iz korpe`,
+      "removed"
+    );
   }
 }
 

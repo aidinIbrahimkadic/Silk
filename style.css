@@ -465,7 +465,7 @@ img {
   box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: space-between;
-  height: 500px;
+  height: 450px;
   /* za dugme */
   position: relative;
   overflow: hidden;
@@ -1267,11 +1267,11 @@ hr {
 .notification-popup {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   padding: 20px 40px;
   color: white;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 100;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   opacity: 1;
@@ -1280,6 +1280,9 @@ hr {
 }
 .notifikacija-ikona {
   font-size: 18px;
+}
+.notifikacija-naziv_proizvoda {
+  font-weight: bold;
 }
 /* Different colors for added/removed notifications */
 .notification-popup.added {
