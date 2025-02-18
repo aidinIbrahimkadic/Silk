@@ -212,6 +212,9 @@ function updateQuantity(button, change) {
   // Update quantity and total
   quantityInput.value = newQty;
   totalField.textContent = `${(newQty * price).toFixed(2)} KM`;
+
+  updateCartTotal();
+
 }
 
 
@@ -243,9 +246,9 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCartTotal(); // Automatically calculate total on page load
 });
 // Refresh totals manually when the button is clicked
-document.querySelector(".osvjezi-korpu").addEventListener("click", function () {
-  updateCartTotal();
-});
+// document.querySelector(".osvjezi-korpu").addEventListener("click", function () {
+//   updateCartTotal();
+// });
 
 function updateCartTotal() {
   let totalSum = 0;
