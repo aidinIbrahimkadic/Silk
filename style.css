@@ -464,14 +464,17 @@ img {
   flex-direction: column;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   align-items: center;
-  justify-content: center;
-
+  justify-content: space-between;
+  height: 500px;
   /* za dugme */
   position: relative;
   overflow: hidden;
 }
 .produkt_foto-blok {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .produkt_foto-blok img {
@@ -481,11 +484,11 @@ img {
   width: 100%;
 }
 
-.kartica {
+/* .kartica {
   position: relative;
   display: inline-block;
-  overflow: hidden; /* Prevents content from overflowing */
-}
+  overflow: hidden;
+} */
 
 .kartica.akcija::after {
   content: "Akcija";
@@ -559,7 +562,9 @@ img {
   opacity: 1;
   cursor: pointer;
 }
-
+.blok-slika, .blok-slika a, .produkt_foto-blok{
+  height:100%
+}
 .proizvod-info {
   padding: 10px 0 20px;
   display: flex;
