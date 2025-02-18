@@ -989,8 +989,8 @@ footer {
   transition: 0.2s all ease-in-out;
 }
 .osvjezi-korpu:hover {
-  background-color: #3378c2;
-  color: #fff;
+  background-color: #d3d3d3;
+  color: #222529;
 }
 .korpa-heading {
   font-size: 24px;
@@ -1148,6 +1148,82 @@ hr {
 
 .checkout-btn:hover {
   background: #3d3d3d;
+}
+
+.min-qty {
+ font-weight: 600;
+}
+.quantity-control-extra{
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+.quantity-input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  pointer-events: none;
+}
+
+.decrease-btn, .increase-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrease-btn {
+  background: red;
+  color: white;
+}
+
+.increase-btn {
+  background: #007bff;
+  color: white;
+}
+
+.decrease-btn:hover {
+  background: darkred;
+}
+
+.increase-btn:hover {
+  background: #0056b3;
+}
+
+.dropdown-section {
+  margin: 15px 0;
+}
+
+.dropdown-section label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dropdown-section select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.dropdown-section select:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 /* PONZIVNOST */

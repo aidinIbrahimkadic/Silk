@@ -5,8 +5,13 @@
     d) 4*4 produkts 👍
     e) footer 👍
     f) paginacija 👍
-    8) to the top dugme 👍
-2. View Cart 👍
-3. Product page
-4. Responsive
-5. Checkout 
+    g) to the top dugme 👍
+    h) sve slike strech po height
+2. View Cart 
+    a) automatski kolicina dugme +/-
+    b) 2 dropdown-a u Checkout
+3. Email dizajn
+4. Product page
+5. Responsive
+
+6. Checkout 

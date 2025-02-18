@@ -93,7 +93,15 @@ function updatePagination() {
   generatePagination();
 }
 
-generatePagination(); // Pokreće paginaciju na početku
+//Moguci bug
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname.endsWith("index.html") ) {
+      generatePagination(); // Run pagination only on index.html
+  }
+});
+
+ // Pokreće paginaciju na početku
+// generatePagination();
 
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".donji_header-blok");
@@ -183,4 +191,77 @@ function updatePrice() {
 
 function removeRow(button) {
   button.closest("tr").remove(); // Removes the table row
+}
+
+
+function updateQuantity(button, change) {
+  const row = button.closest("tr");
+  const quantityInput = row.querySelector(".quantity-input");
+  const priceElement = row.querySelector(".price");
+  const totalField = row.querySelector(".total");
+
+  const minQty = parseInt(row.querySelector(".min-qty").textContent, 10);
+  const price = parseFloat(priceElement.textContent.replace("KM", "").trim());
+
+  let currentQty = parseInt(quantityInput.value, 10);
+  let newQty = currentQty + (minQty * change);
+
+  // Ensure quantity does not go below zero
+  if (newQty < 0) newQty = 0;
+
+  // Update quantity and total
+  quantityInput.value = newQty;
+  totalField.textContent = `${(newQty * price).toFixed(2)} KM`;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateAllTotals(); // Ensure all totals are set on page load
+});
+
+// Function to update total prices on page load
+function updateAllTotals() {
+  document.querySelectorAll(".product-table tbody tr").forEach(row => {
+      const quantityInput = row.querySelector(".quantity-input");
+      const priceElement = row.querySelector(".price");
+      const totalField = row.querySelector(".total");
+
+      if (!quantityInput || !priceElement || !totalField) return;
+
+      const price = parseFloat(priceElement.textContent.replace("KM", "").trim());
+      const currentQty = parseInt(quantityInput.value, 10);
+
+      if (!isNaN(price) && !isNaN(currentQty)) {
+          totalField.textContent = `${(currentQty * price).toFixed(2)} KM`;
+      }
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateCartTotal(); // Automatically calculate total on page load
+});
+// Refresh totals manually when the button is clicked
+document.querySelector(".osvjezi-korpu").addEventListener("click", function () {
+  updateCartTotal();
+});
+
+function updateCartTotal() {
+  let totalSum = 0;
+
+  // Loop through all table rows
+  document.querySelectorAll(".product-table tbody tr").forEach(row => {
+      const totalCell = row.querySelector(".total");
+      
+      if (totalCell) {
+          const totalValue = parseFloat(totalCell.textContent.replace("KM", "").trim());
+          if (!isNaN(totalValue)) {
+              totalSum += totalValue; // Add each product's total
+          }
+      }
+  });
+
+  // Update cart total price
+  document.getElementById("total-price").innerHTML = `<strong>${totalSum.toFixed(2)} KM</strong>`;
 }
