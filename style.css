@@ -1256,20 +1256,26 @@ hr {
   position: fixed;
   bottom: 50px;
   right: 100px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
   z-index: 1000;
 }
+.notifikacije-image_info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
+}
 /* Notification Style */
 .notification-popup {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+  flex-direction: column;
+  background-color:#fff;
   padding: 20px 40px;
-  color: white;
+  color: rgb(48, 48, 48);
   font-size: 14px;
   font-weight: 100;
   border-radius: 5px;
@@ -1281,16 +1287,34 @@ hr {
 .notifikacija-ikona {
   font-size: 18px;
 }
+.notification-blok-btn{
+  width: 100%;
+}
+.btn-view-notification{
+  width: 80%;
+}
 .notifikacija-naziv_proizvoda {
   font-weight: bold;
 }
-/* Different colors for added/removed notifications */
-.notification-popup.added {
-  background-color: #28a745; /* Green for adding */
+.notification-image{
+  height: 80px;
+  width: auto;
 }
-
-.notification-popup.removed {
-  background-color: #dc3545; /* Red for removing */
+.notifikacija-poruka{
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  flex-direction: column;
+}
+/* .notifikacija-poruka-info{
+  color: #7e7e7e;
+} */
+/* Different colors for added/removed notifications */
+.notification-popup.added .notifikacija-poruka-info{
+  color: #28a745; 
+}
+.notification-popup.removed .notifikacija-poruka-info{
+  color: #dc3545; 
 }
 
 /* Fade-out effect */

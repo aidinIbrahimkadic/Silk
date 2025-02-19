@@ -301,7 +301,20 @@ function increaseValue(button) {
 
   if (!wrapper) return;
   const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
- 
+  
+  // const kartica = wrapper.closest(".kartica-container");
+  // const image = kartica.querySelector("img").getAttribute("src");
+  const pagePath = window.location.pathname;
+
+  if (pagePath.endsWith("index.html") || pagePath === "/"){
+    kartica = wrapper.closest(".kartica-container");
+    image = kartica.querySelector("img").getAttribute("src");
+  }
+  else if(pagePath.endsWith("single-product.html")){
+    kartica =wrapper.closest(".kontejner");
+    image=kartica.querySelector("#main-image").getAttribute("src");
+  }
+
 
   const counter = wrapper.querySelector(".counter"); // Select the counter input
 
@@ -311,8 +324,8 @@ function increaseValue(button) {
 
   if (counterValue === stepValue) {
     showNotification(
-      `Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span>dodat u korpu`,
-      "added"
+      `<div class="notifikacija-poruka"><div>Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span></div><div><span class="notifikacija-poruka-info">je dodan u korpu</span></div></div>`,
+      "added",image
     );
   }
 
@@ -327,6 +340,19 @@ function decreaseValue(button) {
   const wrapper = button.closest(".proizvod-info");
   if (!wrapper) return;
   const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
+  const pagePath = window.location.pathname;
+
+  let kartica;
+  let image;
+
+  if (pagePath.endsWith("index.html") || pagePath === "/"){
+    kartica = wrapper.closest(".kartica-container");
+    image = kartica.querySelector("img").getAttribute("src");
+  }
+  else if(pagePath.endsWith("single-product.html")){
+    kartica =wrapper.closest(".kontejner");
+    image=kartica.querySelector("#main-image").getAttribute("src");
+  }
 
   const stepValue =
     parseInt(wrapper.querySelector(".step-value").textContent) || 1;
@@ -336,21 +362,27 @@ function decreaseValue(button) {
 
   if (counterValue === stepValue) {
     showNotification(
-      `Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span> uklonjen iz korpe`,
-      "removed"
+      `<div class="notifikacija-poruka"><div>Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span></div><div><span class="notifikacija-poruka-info">je uklonjen iz korpe</span></div></div>`,
+      "removed", image
     );
   }
 }
 
 // Function to show notifications
-function showNotification(message, type) {
+function showNotification(message, type, image) {
   const notification = document.createElement("div");
   notification.className = `notification-popup ${type}`;
-  notification.innerHTML = `<div class="notifikacija-ikona"><i class="fa ${
-    type === "added" ? "fa-check" : "fa-times"
-  }" aria-hidden="true"></i></div> ${message}`;
+  notification.innerHTML = `<div class="notifikacije-image_info"><img class="notification-image" src='${image}'>  ${message}</div>`;
 
-  document.getElementById("notification-container").appendChild(notification);
+
+
+const notificationBtn = document.createElement("div"); 
+notificationBtn.className = `notification-blok-btn`;
+
+notificationBtn.innerHTML=`<a href="/korpa.html" class="btns btn-view btn-view-notification">Pregled korpe</a>`;
+
+console.log(notificationBtn);
+  document.getElementById("notification-container").appendChild(notification).appendChild(notificationBtn);
 
   setTimeout(() => {
     notification.classList.add("fade-out");
