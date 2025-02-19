@@ -381,7 +381,6 @@ notificationBtn.className = `notification-blok-btn`;
 
 notificationBtn.innerHTML=`<a href="/korpa.html" class="btns btn-view btn-view-notification">Pregled korpe</a>`;
 
-console.log(notificationBtn);
   document.getElementById("notification-container").appendChild(notification).appendChild(notificationBtn);
 
   setTimeout(() => {
