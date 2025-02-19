@@ -204,7 +204,69 @@
       </header>
       <main class="flex main">
         <div class="kontejner">
-          <h2 class="korpa-heading">Naziv proizvoda</h2>
+          <div class="single-product-container">
+            <!-- Image Gallery -->
+            <div class="image-gallery donja-linija">
+                <div class="main-image-wrapper">
+                    <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+                    <img id="main-image" src="/images/pro1.jpg" alt="Product Image">
+                    <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+                </div>
+        
+                <!-- Thumbnails -->
+                <div class="thumbnails-wrapper">
+                    <div class="thumbnails">
+                        <img src="/images/pro2.jpg" class="thumbnail" onclick="setMainImage(this)">
+                        <img src="/images/pro3.jpg" class="thumbnail" onclick="setMainImage(this)">
+                        <img src="/images/product2.jpg" class="thumbnail" onclick="setMainImage(this)">
+                        <img src="/images/logotip.png" class="thumbnail" onclick="setMainImage(this)">
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Product Info -->
+            <div class="kartica-container">
+              <div class="proizvod-info">
+                <span class="kategorija-proizvoda">Kategorija</span>
+                <h3 class="naziv-proizvoda sp_naziv">Kolaž papir sorto</h3>
+                <div class="sp_info-container">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                </div>
+                <div>
+                  <!-- stara cijena -->
+                  <span class="stara-cijena">$99,00</span>
+                  <span class="cijena-proizvoda sp_cijena">0,34 KM</span>
+                </div>
+                <div class="input-wrapper">
+                  <button
+                    class="btn btn-delete notification-btn-delete"
+                    onclick="decreaseValue()"
+                  >
+                    −
+                  </button>
+                  <input
+                    type="text"
+                    class="counter"
+                    id="counter"
+                    value="0"
+                    readonly
+                  />
+                  <button
+                    class="btn btn-add notification-btn-add"
+                    onclick="increaseValue()"
+                  >
+                    +
+                  </button>
+                </div>
+                <div>
+                  <span class="proizvod-kolicina">Količina pakovanja: </span
+                  ><span class="step-value">10</span>
+                </div>
+            </div>
+            
+            
+          </div>
         </div>
       </main>
       <footer>
@@ -468,6 +530,7 @@
     </div>
 
     <!-- Lijevi sidebar filter -->
+    <div id="notification-container"></div>
 
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>

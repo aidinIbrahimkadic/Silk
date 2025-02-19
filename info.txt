@@ -10,8 +10,8 @@
 2. View Cart 👍
     a) automatski kolicina dugme +/- 👍
     b) 2 dropdown-a u Checkout 👍
-3. Email dizajn
-4. Product page
+3. Product page 👍
+4. Email dizajn
 5. Responsive
 
 6. Checkout 

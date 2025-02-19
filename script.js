@@ -32,7 +32,7 @@ function removeProduct(element) {
   element.parentElement.remove();
 }
 
-document.querySelectorAll(".kartica").forEach((kartica) => {
+document.querySelectorAll(".kartica-container").forEach((kartica) => {
   const step = parseInt(kartica.querySelector(".step-value").textContent); // Get step value
   const input = kartica.querySelector(".counter");
   const decreaseBtn = kartica.querySelector(".btn:first-child");
@@ -46,8 +46,7 @@ document.querySelectorAll(".kartica").forEach((kartica) => {
   // Decrease value by step, but allow reaching 0
   decreaseBtn.addEventListener("click", () => {
     let currentValue = parseInt(input.value);
-
-    // 🛑 Check if we are decreasing from `step-value` to `0`
+      // 🛑 Check if we are decreasing from `step-value` to `0`
     if (currentValue === step) {
       decreaseValue(decreaseBtn); // Call the function BEFORE decreasing
     }
@@ -55,7 +54,9 @@ document.querySelectorAll(".kartica").forEach((kartica) => {
     if (currentValue > 0) {
       input.value = currentValue - step;
     }
+
   });
+
 });
 
 // paginacija
@@ -109,24 +110,30 @@ document.addEventListener("DOMContentLoaded", function () {
 // generatePagination();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector(".donji_header-blok");
-  const headerOffset = header.offsetTop; // Prvobitna pozicija headera
-  const headerHeight = header.offsetHeight; // Visina headera
-  const spacer = document.createElement("div"); // Prazan div kao razmak
-  spacer.style.height = `${headerHeight}px`;
-  spacer.style.display = "none"; // Sakriven dok nije potrebno
-  header.parentNode.insertBefore(spacer, header.nextSibling); // Dodaj spacer ispod headera
+  if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+      const header = document.querySelector(".donji_header-blok");
+      
+      if (!header) return; // Stop execution if header is not found
+      
+      const headerOffset = header.offsetTop; // Original position of the header
+      const headerHeight = header.offsetHeight; // Header height
+      const spacer = document.createElement("div"); // Empty div as a spacer
+      spacer.style.height = `${headerHeight}px`;
+      spacer.style.display = "none"; // Hidden until needed
+      header.parentNode.insertBefore(spacer, header.nextSibling); // Insert spacer below header
 
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset >= headerOffset) {
-      header.classList.add("fixed-header");
-      spacer.style.display = "block"; // Prikaži razmak ispod
-    } else {
-      header.classList.remove("fixed-header");
-      spacer.style.display = "none"; // Sakrij razmak kada se vrati gore
-    }
-  });
+      window.addEventListener("scroll", function () {
+          if (window.pageYOffset >= headerOffset) {
+              header.classList.add("fixed-header");
+              spacer.style.display = "block"; // Show spacer below when header is fixed
+          } else {
+              header.classList.remove("fixed-header");
+              spacer.style.display = "none"; // Hide spacer when scrolling back up
+          }
+      });
+  }
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".donji-header li");
@@ -247,10 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartTotal(); // Run only on korpa.html
   }
 });
-// Refresh totals manually when the button is clicked
-// document.querySelector(".osvjezi-korpu").addEventListener("click", function () {
-//   updateCartTotal();
-// });
+
 
 function updateCartTotal() {
   let totalSum = 0;
@@ -294,10 +298,13 @@ function increaseValue(button) {
     return;
   }
   const wrapper = button.closest(".proizvod-info");
+
   if (!wrapper) return;
   const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
+ 
 
   const counter = wrapper.querySelector(".counter"); // Select the counter input
+
   const stepValue =
     parseInt(wrapper.querySelector(".step-value").textContent) || 1;
   let counterValue = parseInt(counter.value);
@@ -352,3 +359,56 @@ function showNotification(message, type) {
     }, 500);
   }, 3000);
 }
+
+
+// single product
+
+let currentImageIndex = 0;
+//OVDJE LISTA FOTOGRAFIJA KOJE IMA SINGLE PRODUCT
+const images = [
+    "/images/pro2.jpg",
+    "/images/pro3.jpg",
+    "/images/product2.jpg",
+    "/images/logotip.png"
+];
+
+// Change main image using arrows
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
+    document.getElementById("main-image").src = images[currentImageIndex];
+}
+
+// Click thumbnail to change main image
+function setMainImage(img) {
+    document.getElementById("main-image").src = img.src;
+}
+
+// Scroll thumbnails
+function scrollThumbnails(direction) {
+    const thumbnailContainer = document.querySelector(".thumbnails");
+    thumbnailContainer.scrollBy({
+        left: direction * 100,
+        behavior: "smooth"
+    });
+}
+
+// Quantity Step Logic (same as on other page)
+// document.querySelectorAll(".single-product-container").forEach((product) => {
+//     const step = parseInt(product.querySelector(".step-value").textContent); 
+//     const input = product.querySelector(".counter");
+//     const decreaseBtn = product.querySelector(".decrease-btn");
+//     const increaseBtn = product.querySelector(".increase-btn");
+
+//     increaseBtn.addEventListener("click", () => {
+//         input.value = parseInt(input.value) + step;
+//     });
+
+//     decreaseBtn.addEventListener("click", () => {
+//         let currentValue = parseInt(input.value);
+//         if (currentValue > 0) {
+//             input.value = currentValue - step;
+//         }
+//     });
+// });

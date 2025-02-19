@@ -1301,6 +1301,132 @@ hr {
 .notification-icon {
   font-size: 20px;
 }
+
+/* Single product */
+
+/* Main Product Page Container */
+.single-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  max-width: 80vw;
+  margin: auto;
+}
+
+/* Image Gallery */
+.image-gallery {
+  flex: 1;
+  height: 500px;
+  text-align: center;
+}
+
+/* Main Image */
+.main-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.main-image-wrapper img {
+  width: auto;
+  max-width: 80vw;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.arrow:hover{
+  background: rgba(26, 26, 26, 0.6);
+
+}
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+/* Thumbnails */
+.thumbnails-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 5px;
+  max-width: 320px;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.1);
+}
+
+/* Arrows for thumbnails */
+.left-thumb, .right-thumb {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-thumb {
+  left: -15px;
+}
+
+.right-thumb {
+  right: -15px;
+}
+.sp_naziv{
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.sp_info-container{
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: rgb(124, 124, 124);
+}
+.sp_cijena{
+  font-size: 24px;
+}
+
 /* PONZIVNOST */
 @media (max-width: 1024px) {
   .grid_main {
