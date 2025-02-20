@@ -425,21 +425,18 @@ function scrollThumbnails(direction) {
     });
 }
 
-// Quantity Step Logic (same as on other page)
-// document.querySelectorAll(".single-product-container").forEach((product) => {
-//     const step = parseInt(product.querySelector(".step-value").textContent); 
-//     const input = product.querySelector(".counter");
-//     const decreaseBtn = product.querySelector(".decrease-btn");
-//     const increaseBtn = product.querySelector(".increase-btn");
 
-//     increaseBtn.addEventListener("click", () => {
-//         input.value = parseInt(input.value) + step;
-//     });
+// KLIJENT MODAL
+function openKlijentModal() {
+  document.getElementById("klijentModal").style.display = "flex";
+}
 
-//     decreaseBtn.addEventListener("click", () => {
-//         let currentValue = parseInt(input.value);
-//         if (currentValue > 0) {
-//             input.value = currentValue - step;
-//         }
-//     });
-// });
+function closeKlijentModal() {
+  document.getElementById("klijentModal").style.display = "none";
+}
+
+function selectClient() {
+  const selectedClient = document.getElementById("clientList").value;
+  alert("Odabrali ste: " + selectedClient);
+  closeKlijentModal();
+}

@@ -15,3 +15,9 @@
 5. Responsive
 
 6. Checkout 
+
+greske
+- slider na filteru
+- fotografije iskacu visinom
+- vrijednost inputa na cijeli broj prebaciti
+- KlijentModal

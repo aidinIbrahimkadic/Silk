@@ -200,6 +200,8 @@
               <a href="#"><li>ŠKOLSKI PRIBOR I KANCELARIJSKI MATERIJAL</li></a>
               <a href="#"><li>VRT I KAMP</li></a>
               <a href="#"><li>VAŠ ASORTIMAN</li></a>
+              <!-- OVO IZBRISATI -->
+              <button onclick="openKlijentModal()" class="btnKlijent btnKlijent-primary">Otvori Klijent Modal</button>
             </ul>
           </nav>
         </div>
@@ -1233,6 +1235,31 @@
     </div>
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>
+
+
+    <!-- KLIJENT MODAL -->
+    
+
+    <div id="klijentModal" class="klijentModal">
+      <div class="klijentModal-content">
+          <div class="klijentModal-header">Odaberite klijenta</div>
+          <div class="klijentModal-body">
+              <input type="text" id="txtPretraga" placeholder="Pretraži klijente...">
+              <select id="clientList">
+                  <option value="Firma A">Firma A, Adresa 1, Grad A</option>
+                  <option value="Firma B">Firma B, Adresa 2, Grad B</option>
+                  <option value="Firma C">Firma C, Adresa 3, Grad C</option>
+                  <option value="Firma D">Firma D, Adresa 4, Grad D</option>
+              </select>
+          </div>
+          <div class="klijentModal-footer">
+              <button class="btnKlijent btnKlijent-primary" onclick="selectClient()">Odaberi</button>
+              <button class="btnKlijent btnKlijent-secondary" onclick="closeKlijentModal()">Zatvori</button>
+          </div>
+      </div>
+  </div>
+
+
 
     <script src="script.js"></script>
   </body>
