@@ -896,8 +896,8 @@ footer {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden by default */
-  width: 250px;
+  left: -350px; /* Hidden by default */
+  width: 350px;
   height: 100%;
   background: #ffffff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
