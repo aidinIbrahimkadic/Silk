@@ -1595,6 +1595,14 @@ hr {
   .donji-header li {
     font-size: 10px;
   }
+  .korpa-content {
+    flex-direction: column;
+    gap: 50px;
+    /* align-items: center; */
+  }
+  .popup-logotip {
+    width: 150px;
+  }
 }
 
 /* Small devices (phones, 576px and up) */
