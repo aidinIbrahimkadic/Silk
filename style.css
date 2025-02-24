@@ -581,6 +581,7 @@ img {
 .naziv-proizvoda {
   font-size: 18px;
   font-weight: 400;
+  text-align: center;
 }
 .stara-cijena {
   font-size: 14px;
@@ -1354,7 +1355,8 @@ hr {
 .main-image-wrapper img {
   width: auto;
   max-width: 80vw;
-  height: 500px;
+  height: 400px;
+  /* height: auto; */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -1543,6 +1545,12 @@ hr {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
+
+.main-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 /* Prikaz samo na mobilnim uređajima */
 @media (min-width: 768px) {
   .mobile-menu {
@@ -1582,10 +1590,26 @@ hr {
   .grid_main {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
+
+  .korpa-content {
+    justify-content: space-between;
+  }
+  .korpa-content {
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+    /* align-items: center; */
+  }
+  .card-totals {
+    width: 500px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 991px) {
+  .main-image-wrapper img {
+    height: 300px;
+  }
   .input_pretraga-lijevo {
     width: 250px;
   }
@@ -1595,18 +1619,41 @@ hr {
   .donji-header li {
     font-size: 10px;
   }
-  .korpa-content {
-    flex-direction: column;
-    gap: 50px;
-    /* align-items: center; */
-  }
+
   .popup-logotip {
     width: 150px;
+  }
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .product-table th,
+  .product-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
   }
 }
 
 /* Small devices (phones, 576px and up) */
 @media (max-width: 767px) {
+  .main-image-wrapper img {
+    height: 200px;
+  }
+  .right {
+    right: -50px;
+  }
+  .left {
+    left: -50px;
+  }
+  .korpa-content {
+    align-items: center;
+    /* align-items: center; */
+  }
+  .card-totals {
+    width: 300px;
+  }
   .gornji_header,
   .donji-header,
   .logout-dugme,
@@ -1680,10 +1727,61 @@ hr {
   .footer-lijevo {
     width: 100%;
   }
+
+  .product-table thead {
+    display: none; /* Sakrij zaglavlje na mobilnim uređajima */
+  }
+
+  .product-table tbody,
+  .product-table tr,
+  .product-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .product-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+  }
+
+  .product-table td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .product-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .product-table .image-column {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .product-table .image-column img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575px) {
+  .main-image-wrapper img {
+    height: 150px;
+  }
+  .korpa-content-tabela {
+    width: 100%;
+  }
   .grid_main {
     grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
   }

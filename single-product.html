@@ -137,7 +137,7 @@
                   />
                 </svg>
               </a> -->
-              <a href="#">
+              <a  class="logout-dugme"  href="#">
                 <svg
                   class="svg-icon"
                   width="35px"
@@ -534,7 +534,24 @@
 
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>
-
+    <nav class="mobile-menu">
+        <a href="#" class="menu-item">
+          <i class="fas fa-home"></i>
+          <span>Početna</span>
+        </a>
+        <a href="#" class="menu-item" onclick="toggleSidebar()">
+          <i class="fas fa-filter"></i>
+          <span>Filter</span>
+        </a>
+        <a href="/korisnik.html" class="menu-item">
+          <i class="fas fa-user"></i>
+          <span>Korisnik</span>
+        </a>
+        <a href="/korpa.html" class="menu-item">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Korpa</span>
+        </a>
+      </nav>
     <script src="script.js"></script>
   </body>
 </html>

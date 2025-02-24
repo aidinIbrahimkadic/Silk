@@ -137,7 +137,7 @@
                   />
                 </svg>
               </a> -->
-              <a href="#">
+              <a class="logout-dugme" href="#">
                 <svg
                   class="svg-icon"
                   width="35px"
@@ -229,16 +229,16 @@
                         >
                       </div>
                     </td>
-                    <td>
+                    <td data-label="Proizvod">
                       <a
                         class="korpa-tabela-produkt"
                         href="/single-product.html"
                         >Wireless Headphones</a
                       >
                     </td>
-                    <td class="price">5.50 KM</td>
-                    <td class="min-qty">15</td>
-                    <td class="quantity-control">
+                    <td data-label="Cijena" class="price">5.50 KM</td>
+                    <td data-label="Min. količina" class="min-qty">15</td>
+                    <td data-label="Količina" class="quantity-control">
                       <div class="flex quantity-control-extra">
                         <button
                           class="decrease-btn"
@@ -260,7 +260,7 @@
                         </button>
                       </div>
                     </td>
-                    <td class="total"></td>
+                    <td data-label="Total" class="total"></td>
                   </tr>
                   <tr>
                     <td class="image-column">
@@ -271,16 +271,16 @@
                         >
                       </div>
                     </td>
-                    <td>
+                    <td data-label="Proizvod">
                       <a
                         class="korpa-tabela-produkt"
                         href="/single-product.html"
                         >Wireless Headphones</a
                       >
                     </td>
-                    <td class="price">5.50 KM</td>
-                    <td class="min-qty">10</td>
-                    <td class="quantity-control">
+                    <td data-label="Cijena" class="price">5.50 KM</td>
+                    <td data-label="Min. količina" class="min-qty">15</td>
+                    <td data-label="Količina" class="quantity-control">
                       <div class="flex quantity-control-extra">
                         <button
                           class="decrease-btn"
@@ -291,7 +291,7 @@
                         <input
                           type="text"
                           class="quantity-input"
-                          value="0"
+                          value="15"
                           readonly
                         />
                         <button
@@ -302,7 +302,49 @@
                         </button>
                       </div>
                     </td>
-                    <td class="total"></td>
+                    <td data-label="Total" class="total"></td>
+                  </tr>
+                  <tr>
+                    <td class="image-column">
+                      <div class="image-wrapper">
+                        <img src="/images/product.jpg" alt="Product" />
+                        <span class="remove-btn" onclick="removeRow(this)"
+                          >✖</span
+                        >
+                      </div>
+                    </td>
+                    <td data-label="Proizvod">
+                      <a
+                        class="korpa-tabela-produkt"
+                        href="/single-product.html"
+                        >Wireless Headphones</a
+                      >
+                    </td>
+                    <td data-label="Cijena" class="price">5.50 KM</td>
+                    <td data-label="Min. količina" class="min-qty">15</td>
+                    <td data-label="Količina" class="quantity-control">
+                      <div class="flex quantity-control-extra">
+                        <button
+                          class="decrease-btn"
+                          onclick="updateQuantity(this, -1)"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="text"
+                          class="quantity-input"
+                          value="15"
+                          readonly
+                        />
+                        <button
+                          class="increase-btn"
+                          onclick="updateQuantity(this, 1)"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td data-label="Total" class="total"></td>
                   </tr>
                 </tbody>
               </table>
@@ -624,7 +666,24 @@
 
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>
-
+    <nav class="mobile-menu">
+      <a href="#" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Početna</span>
+      </a>
+      <a href="#" class="menu-item" onclick="toggleSidebar()">
+        <i class="fas fa-filter"></i>
+        <span>Filter</span>
+      </a>
+      <a href="/korisnik.html" class="menu-item">
+        <i class="fas fa-user"></i>
+        <span>Korisnik</span>
+      </a>
+      <a href="/korpa.html" class="menu-item">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Korpa</span>
+      </a>
+    </nav>
     <script src="script.js"></script>
   </body>
 </html>
