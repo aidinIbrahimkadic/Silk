@@ -465,7 +465,8 @@ img {
   box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: space-between;
-  height: 550px;
+  /* height: 550px; */
+
   /* za dugme */
   position: relative;
   overflow: hidden;
@@ -562,7 +563,10 @@ img {
   opacity: 1;
   cursor: pointer;
 }
-.blok-slika,
+.blok-slika {
+  height: 200px;
+  width: auto;
+}
 .blok-slika a,
 .produkt_foto-blok {
   height: 100%;
@@ -1776,6 +1780,9 @@ hr {
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575px) {
+  .blok-slika {
+    height: 300px;
+  }
   .main-image-wrapper img {
     height: 150px;
   }
