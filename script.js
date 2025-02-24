@@ -46,7 +46,7 @@ document.querySelectorAll(".kartica-container").forEach((kartica) => {
   // Decrease value by step, but allow reaching 0
   decreaseBtn.addEventListener("click", () => {
     let currentValue = parseInt(input.value);
-      // 🛑 Check if we are decreasing from `step-value` to `0`
+    // 🛑 Check if we are decreasing from `step-value` to `0`
     if (currentValue === step) {
       decreaseValue(decreaseBtn); // Call the function BEFORE decreasing
     }
@@ -54,13 +54,12 @@ document.querySelectorAll(".kartica-container").forEach((kartica) => {
     if (currentValue > 0) {
       input.value = currentValue - step;
     }
-
   });
-
 });
 
 // paginacija
-const totalPages = 10; // Ukupan broj stranica
+// const totalPages = 10;
+let totalPages = window.matchMedia("(max-width: 767px)").matches ? 5 : 10;
 let currentPage = 1; // Početna stranica
 
 function generatePagination() {
@@ -110,30 +109,32 @@ document.addEventListener("DOMContentLoaded", function () {
 // generatePagination();
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
-      const header = document.querySelector(".donji_header-blok");
-      
-      if (!header) return; // Stop execution if header is not found
-      
-      const headerOffset = header.offsetTop; // Original position of the header
-      const headerHeight = header.offsetHeight; // Header height
-      const spacer = document.createElement("div"); // Empty div as a spacer
-      spacer.style.height = `${headerHeight}px`;
-      spacer.style.display = "none"; // Hidden until needed
-      header.parentNode.insertBefore(spacer, header.nextSibling); // Insert spacer below header
+  if (
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/"
+  ) {
+    const header = document.querySelector(".donji_header-blok");
 
-      window.addEventListener("scroll", function () {
-          if (window.pageYOffset >= headerOffset) {
-              header.classList.add("fixed-header");
-              spacer.style.display = "block"; // Show spacer below when header is fixed
-          } else {
-              header.classList.remove("fixed-header");
-              spacer.style.display = "none"; // Hide spacer when scrolling back up
-          }
-      });
+    if (!header) return; // Stop execution if header is not found
+
+    const headerOffset = header.offsetTop; // Original position of the header
+    const headerHeight = header.offsetHeight; // Header height
+    const spacer = document.createElement("div"); // Empty div as a spacer
+    spacer.style.height = `${headerHeight}px`;
+    spacer.style.display = "none"; // Hidden until needed
+    header.parentNode.insertBefore(spacer, header.nextSibling); // Insert spacer below header
+
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset >= headerOffset) {
+        header.classList.add("fixed-header");
+        spacer.style.display = "block"; // Show spacer below when header is fixed
+      } else {
+        header.classList.remove("fixed-header");
+        spacer.style.display = "none"; // Hide spacer when scrolling back up
+      }
+    });
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".donji-header li");
@@ -255,7 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 function updateCartTotal() {
   let totalSum = 0;
 
@@ -301,20 +301,18 @@ function increaseValue(button) {
 
   if (!wrapper) return;
   const naziv = wrapper.querySelector(".naziv-proizvoda").textContent;
-  
+
   // const kartica = wrapper.closest(".kartica-container");
   // const image = kartica.querySelector("img").getAttribute("src");
   const pagePath = window.location.pathname;
 
-  if (pagePath.endsWith("index.html") || pagePath === "/"){
+  if (pagePath.endsWith("index.html") || pagePath === "/") {
     kartica = wrapper.closest(".kartica-container");
     image = kartica.querySelector("img").getAttribute("src");
+  } else if (pagePath.endsWith("single-product.html")) {
+    kartica = wrapper.closest(".kontejner");
+    image = kartica.querySelector("#main-image").getAttribute("src");
   }
-  else if(pagePath.endsWith("single-product.html")){
-    kartica =wrapper.closest(".kontejner");
-    image=kartica.querySelector("#main-image").getAttribute("src");
-  }
-
 
   const counter = wrapper.querySelector(".counter"); // Select the counter input
 
@@ -325,7 +323,8 @@ function increaseValue(button) {
   if (counterValue === stepValue) {
     showNotification(
       `<div class="notifikacija-poruka"><div>Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span></div><div><span class="notifikacija-poruka-info">je dodan u korpu</span></div></div>`,
-      "added",image
+      "added",
+      image
     );
   }
 
@@ -345,13 +344,12 @@ function decreaseValue(button) {
   let kartica;
   let image;
 
-  if (pagePath.endsWith("index.html") || pagePath === "/"){
+  if (pagePath.endsWith("index.html") || pagePath === "/") {
     kartica = wrapper.closest(".kartica-container");
     image = kartica.querySelector("img").getAttribute("src");
-  }
-  else if(pagePath.endsWith("single-product.html")){
-    kartica =wrapper.closest(".kontejner");
-    image=kartica.querySelector("#main-image").getAttribute("src");
+  } else if (pagePath.endsWith("single-product.html")) {
+    kartica = wrapper.closest(".kontejner");
+    image = kartica.querySelector("#main-image").getAttribute("src");
   }
 
   const stepValue =
@@ -363,7 +361,8 @@ function decreaseValue(button) {
   if (counterValue === stepValue) {
     showNotification(
       `<div class="notifikacija-poruka"><div>Proizvod <span class="notifikacija-naziv_proizvoda">${naziv}</span></div><div><span class="notifikacija-poruka-info">je uklonjen iz korpe</span></div></div>`,
-      "removed", image
+      "removed",
+      image
     );
   }
 }
@@ -374,14 +373,15 @@ function showNotification(message, type, image) {
   notification.className = `notification-popup ${type}`;
   notification.innerHTML = `<div class="notifikacije-image_info"><img class="notification-image" src='${image}'>  ${message}</div>`;
 
+  const notificationBtn = document.createElement("div");
+  notificationBtn.className = `notification-blok-btn`;
 
+  notificationBtn.innerHTML = `<a href="/korpa.html" class="btns btn-view btn-view-notification">Pregled korpe</a>`;
 
-const notificationBtn = document.createElement("div"); 
-notificationBtn.className = `notification-blok-btn`;
-
-notificationBtn.innerHTML=`<a href="/korpa.html" class="btns btn-view btn-view-notification">Pregled korpe</a>`;
-
-  document.getElementById("notification-container").appendChild(notification).appendChild(notificationBtn);
+  document
+    .getElementById("notification-container")
+    .appendChild(notification)
+    .appendChild(notificationBtn);
 
   setTimeout(() => {
     notification.classList.add("fade-out");
@@ -391,40 +391,38 @@ notificationBtn.innerHTML=`<a href="/korpa.html" class="btns btn-view btn-view-n
   }, 3000);
 }
 
-
 // single product
 
 let currentImageIndex = 0;
 //OVDJE LISTA FOTOGRAFIJA KOJE IMA SINGLE PRODUCT
 const images = [
-    "/images/pro2.jpg",
-    "/images/pro3.jpg",
-    "/images/product2.jpg",
-    "/images/logotip.png"
+  "/images/pro2.jpg",
+  "/images/pro3.jpg",
+  "/images/product2.jpg",
+  "/images/logotip.png",
 ];
 
 // Change main image using arrows
 function changeImage(direction) {
-    currentImageIndex += direction;
-    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
-    if (currentImageIndex >= images.length) currentImageIndex = 0;
-    document.getElementById("main-image").src = images[currentImageIndex];
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+  if (currentImageIndex >= images.length) currentImageIndex = 0;
+  document.getElementById("main-image").src = images[currentImageIndex];
 }
 
 // Click thumbnail to change main image
 function setMainImage(img) {
-    document.getElementById("main-image").src = img.src;
+  document.getElementById("main-image").src = img.src;
 }
 
 // Scroll thumbnails
 function scrollThumbnails(direction) {
-    const thumbnailContainer = document.querySelector(".thumbnails");
-    thumbnailContainer.scrollBy({
-        left: direction * 100,
-        behavior: "smooth"
-    });
+  const thumbnailContainer = document.querySelector(".thumbnails");
+  thumbnailContainer.scrollBy({
+    left: direction * 100,
+    behavior: "smooth",
+  });
 }
-
 
 // KLIJENT MODAL
 function openKlijentModal() {

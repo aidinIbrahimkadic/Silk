@@ -75,14 +75,6 @@
                     <span class="clear-btn" onclick="clearInput()">✖</span>
                   </div>
                   <div class="input_pretraga-desno flex">
-                    <div class="pretraga_select-wrapper">
-                      <select class="pretraga_select" name="category">
-                        <option value="all" selected>Sve kategorije</option>
-                        <option value="">Fashion</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="motors">Motors</option>
-                      </select>
-                    </div>
                     <button
                       class="btn-pretraga"
                       type="submit"
@@ -115,31 +107,7 @@
               </div>
             </div>
             <div class="flex srednji_header-desno">
-              <!-- <a href="#">
-                <svg
-                  class="svg-icon"
-                  width="35px"
-                  height="35px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="12"
-                    cy="6"
-                    r="4"
-                    stroke="#212121"
-                    stroke-width="1.5"
-                  />
-                  <path
-                    d="M19.9975 18C20 17.8358 20 17.669 20 17.5C20 15.0147 16.4183 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C14.231 22 15.8398 21.8433 17 21.5634"
-                    stroke="#212121"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </a> -->
-              <a href="#">
+              <a class="logout-dugme" href="#">
                 <svg
                   class="svg-icon"
                   width="35px"
@@ -201,7 +169,12 @@
               <a href="#"><li>VRT I KAMP</li></a>
               <a href="#"><li>VAŠ ASORTIMAN</li></a>
               <!-- OVO IZBRISATI -->
-              <button onclick="openKlijentModal()" class="btnKlijent btnKlijent-primary">Otvori Klijent Modal</button>
+              <!-- <button
+                onclick="openKlijentModal()"
+                class="btnKlijent btnKlijent-primary"
+              >
+                Otvori Klijent Modal
+              </button> -->
             </ul>
           </nav>
         </div>
@@ -934,7 +907,9 @@
             </ul>
           </div>
           <div class="footer-desno">
-            <span class="footer-naslov">NEWSLETTER</span>
+            <span class="footer-naslov footer-naslov-newsletter"
+              >NEWSLETTER</span
+            >
 
             <p class="footer-opis">
               Pretplatite se na naš newsletter i dobijajte najnovije informacije
@@ -1241,9 +1216,7 @@
           <label><input type="checkbox" /> Sports</label>
           <label><input type="checkbox" /> Beauty</label>
         </div>
-        <h3 onclick="toggleCategory('xy')">
-          XY <span id="xy-icon">-</span>
-        </h3>
+        <h3 onclick="toggleCategory('xy')">XY <span id="xy-icon">-</span></h3>
         <div class="category-list" id="xy">
           <label><input type="checkbox" /> Electronics</label>
           <label><input type="checkbox" /> Clothing</label>
@@ -1270,37 +1243,65 @@
     </div>
 
     <!-- Notification Container -->
-    <div id="notification-container">
-      
-    </div>
+    <div id="notification-container"></div>
     <!-- To the top button -->
     <button id="toTopBtn" class="to-top-btn" onclick="scrollToTop()">▲</button>
 
-
     <!-- KLIJENT MODAL -->
-    
 
     <div id="klijentModal" class="klijentModal">
       <div class="klijentModal-content">
-          <div class="klijentModal-header">Odaberite klijenta</div>
-          <div class="klijentModal-body">
-              <input type="text" id="txtPretraga" placeholder="Pretraži klijente...">
-              <select id="clientList">
-                  <option value="Firma A">Firma A, Adresa 1, Grad A</option>
-                  <option value="Firma B">Firma B, Adresa 2, Grad B</option>
-                  <option value="Firma C">Firma C, Adresa 3, Grad C</option>
-                  <option value="Firma D">Firma D, Adresa 4, Grad D</option>
-              </select>
-          </div>
-          <div class="klijentModal-footer">
-              <button class="btnKlijent btnKlijent-primary" onclick="selectClient()">Odaberi</button>
-              <button class="btnKlijent btnKlijent-secondary" onclick="closeKlijentModal()">Zatvori</button>
-          </div>
+        <div class="klijentModal-header">Odaberite klijenta</div>
+        <div class="klijentModal-body">
+          <input
+            type="text"
+            id="txtPretraga"
+            placeholder="Pretraži klijente..."
+          />
+          <select id="clientList">
+            <option value="Firma A">Firma A, Adresa 1, Grad A</option>
+            <option value="Firma B">Firma B, Adresa 2, Grad B</option>
+            <option value="Firma C">Firma C, Adresa 3, Grad C</option>
+            <option value="Firma D">Firma D, Adresa 4, Grad D</option>
+          </select>
+        </div>
+        <div class="klijentModal-footer">
+          <button
+            class="btnKlijent btnKlijent-primary"
+            onclick="selectClient()"
+          >
+            Odaberi
+          </button>
+          <button
+            class="btnKlijent btnKlijent-secondary"
+            onclick="closeKlijentModal()"
+          >
+            Zatvori
+          </button>
+        </div>
       </div>
-  </div>
+    </div>
 
+    <!-- Mobilni meni -->
 
-
+    <nav class="mobile-menu">
+      <a href="#" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Početna</span>
+      </a>
+      <a href="#" class="menu-item" onclick="toggleSidebar()">
+        <i class="fas fa-filter"></i>
+        <span>Filter</span>
+      </a>
+      <a href="/korisnik.html" class="menu-item">
+        <i class="fas fa-user"></i>
+        <span>Korisnik</span>
+      </a>
+      <a href="/korpa.html" class="menu-item">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Korpa</span>
+      </a>
+    </nav>
     <script src="script.js"></script>
   </body>
 </html>
