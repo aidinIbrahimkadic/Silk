@@ -306,7 +306,11 @@ function increaseValue(button) {
   // const image = kartica.querySelector("img").getAttribute("src");
   const pagePath = window.location.pathname;
 
-  if (pagePath.endsWith("index.html") || pagePath === "/") {
+  if (
+    pagePath.endsWith("index.html") ||
+    pagePath.endsWith("tabela.html") ||
+    pagePath === "/"
+  ) {
     kartica = wrapper.closest(".kartica-container");
     image = kartica.querySelector("img").getAttribute("src");
   } else if (pagePath.endsWith("single-product.html")) {
@@ -344,7 +348,11 @@ function decreaseValue(button) {
   let kartica;
   let image;
 
-  if (pagePath.endsWith("index.html") || pagePath === "/") {
+  if (
+    pagePath.endsWith("index.html") ||
+    pagePath.endsWith("tabela.html") ||
+    pagePath === "/"
+  ) {
     kartica = wrapper.closest(".kartica-container");
     image = kartica.querySelector("img").getAttribute("src");
   } else if (pagePath.endsWith("single-product.html")) {

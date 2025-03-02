@@ -1556,6 +1556,50 @@ hr {
   justify-content: center;
 }
 
+.stranica-tabela {
+  margin-top: 100px;
+}
+
+.tabela-kontejner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.tabela-proizvod-info {
+  padding: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+
+  justify-self: end;
+}
+.tabela-kartica {
+  border: solid 1px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+.tabela-kontejner-opis {
+  width: 90%;
+}
+.tabela-opis {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #656565;
+}
+
+.tabela-financ {
+  width: 50%;
+}
+.naziv-proizvoda-tabela {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
 /* Prikaz samo na mobilnim uređajima */
 @media (min-width: 768px) {
   .mobile-menu {
@@ -1643,6 +1687,20 @@ hr {
 
 /* Small devices (phones, 576px and up) */
 @media (max-width: 767px) {
+  .tabela-kartica {
+    display: flex;
+  }
+  .tabela-proizvod-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tabela-financ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .main-image-wrapper img {
     height: 200px;
   }
