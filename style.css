@@ -1843,6 +1843,9 @@ hr {
   .blok-slika {
     height: 300px;
   }
+  .blok-slika-tabela {
+    height: auto;
+  }
   .main-image-wrapper img {
     height: 150px;
   }
