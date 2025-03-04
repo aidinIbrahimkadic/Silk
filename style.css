@@ -1875,9 +1875,20 @@ hr {
     gap: 80px;
     text-align: center;
   }
+  .sidebar {
+    width: 300px;
+  }
 }
 @media (max-width: 375px) {
   .input_pretraga-lijevo {
     width: 150px;
+  }
+  .sidebar {
+    width: 250px;
+  }
+}
+@media (max-width: 305px) {
+  .input_pretraga-lijevo {
+    width: 100px;
   }
 }
